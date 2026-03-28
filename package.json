@@ -1,6 +1,6 @@
 {
   "name": "willys-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "TypeScript library and CLI for the Willys grocery store API",
   "type": "module",
   "main": "dist/index.js",
