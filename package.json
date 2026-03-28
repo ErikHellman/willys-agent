@@ -16,7 +16,8 @@
   },
   "files": [
     "dist",
-    "!dist/**/*.test.*"
+    "!dist/**/*.test.*",
+    "SKILL.md"
   ],
   "scripts": {
     "build": "tsc",
