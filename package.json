@@ -37,7 +37,7 @@
   "author": "Erik Hellman",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ErikHellman/willys-agent"
+    "url": "git+https://github.com/ErikHellman/willys-agent.git"
   },
   "license": "ISC",
   "dependencies": {

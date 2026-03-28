@@ -56,15 +56,16 @@ describe.skipIf(!hasCredentials)("Willys API Integration", { timeout: 30_000 }, 
     const product = searchResult.results[0];
     expect(product).toBeDefined();
 
-    const cartAfterAdd = await api.addToCart([{ code: product.code, qty: 1 }]);
+    await api.addToCart([{ code: product.code, qty: 1 }]);
+    const cartAfterAdd = await api.getCart();
     expect(cartAfterAdd.totalUnitCount).toBeGreaterThan(0);
 
-    const cartAfterRemove = await api.removeFromCart(product.code);
+    await api.removeFromCart(product.code);
+    const cartAfterRemove = await api.getCart();
     expect(cartAfterRemove.totalUnitCount).toBeLessThan(cartAfterAdd.totalUnitCount);
   });
 
   it("should clear the cart", async () => {
-    // Add something first
     const searchResult = await api.search("mjölk", 0, 1);
     await api.addToCart([{ code: searchResult.results[0].code, qty: 1 }]);
 
